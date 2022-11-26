@@ -98,7 +98,7 @@ parts:
   tux-math:
     after: [alsa-mixin]
     plugin: cmake
-    source: "https://github.com/siddharthlatest/tuxmath.git"
+    source: "https://github.com/tux4kids/tuxmath.git"
     source-depth: 1
     source-branch: master
     source-type: git
