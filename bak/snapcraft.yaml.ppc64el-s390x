@@ -39,11 +39,10 @@ plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
   
 apps:
   tux-math:
-    command-chain: ["snap/command-chain/alsa-launch"]
+    command-chain: ["snap/command-chain/alsa-launch", "bin/desktop-launch"]
     command: usr/local/bin/tuxmath
     environment:
       LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio/
-    extensions: [gnome-3-38]
     plugs:
       - home
       - audio-playback
@@ -75,7 +74,17 @@ layout:
     bind: $SNAP/etc/fonts
     
 parts:
+  desktop-glib-only:
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    source-subdir: glib-only
+    plugin: make
+    build-packages:
+      - libglib2.0-dev
+    stage-packages:
+      - libglib2.0-bin
+
   alsa-mixin:
+    after: [desktop-glib-only]
     plugin: dump
     source: https://github.com/diddlesnaps/snapcraft-alsa.git
     source-subdir: snapcraft-assets
