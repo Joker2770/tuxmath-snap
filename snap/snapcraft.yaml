@@ -86,8 +86,30 @@ parts:
       - libasound2-plugins
       - yad
 
-  tux-math:
+  t4kcommon:
     after: [alsa-mixin]
+    plugin: cmake
+    source: "https://github.com/tux4kids/t4kcommon.git"
+    source-depth: 1
+    source-branch: master
+    source-type: git
+    build-packages:
+      - gcc
+      - g++
+      - build-essential
+      - cmake
+      - make
+      - libcairo2-dev
+      - libsdl1.2-dev
+      - libsdl-image1.2-dev
+      - libsdl-net1.2-dev
+      - libsdl-pango-dev
+      - libsdl-mixer1.2-dev
+      - librsvg2-dev
+      - libpng-dev
+
+  tux-math:
+    after: [t4kcommon]
     plugin: cmake
     source: "https://github.com/tux4kids/tuxmath.git"
     source-depth: 1
@@ -108,7 +130,7 @@ parts:
       - libsdl2-ttf-dev
       - libsdl-mixer1.2-dev
       - librsvg2-dev
-      - libt4k-common0-dev
+      # - libt4k-common0-dev
     stage-packages:
       - libcairo2
       - libsdl1.2debian
@@ -121,6 +143,6 @@ parts:
       - libpulse0
       - librsvg2-2
       - librsvg2-common
-      - libt4k-common0
+      # - libt4k-common0
       - libglu1-mesa
       - freeglut3
