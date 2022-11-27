@@ -18,11 +18,11 @@ description: |
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 base: core18
-# architectures:
-  # - build-on: amd64
-  # - build-on: arm64
-  # - build-on: armhf
-  # - build-on: i386
+architectures:
+  - build-on: amd64
+  - build-on: armhf
+  - build-on: i386
+  - build-on: s390x
 
 plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
   gtk-3-themes:
@@ -66,6 +66,8 @@ layout:
     bind: $SNAP/usr/local/share/locale
   /usr/local/share/tuxmath:
     bind: $SNAP/usr/local/share/tuxmath
+  /usr/local/share/tuxmath/images/menu:
+    bind: $SNAP/usr/local/share/tuxmath/images/status
   /usr/local/var/tuxmath:
     bind: $SNAP/usr/local/var/tuxmath
   /usr/local/etc/tuxmath:
