@@ -37,7 +37,7 @@ plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
     interface: content
     target: $SNAP/data-dir/sounds
     default-provider: gtk-common-themes
-  
+
 apps:
   tux-math:
     command-chain: ["snap/command-chain/alsa-launch"]
@@ -58,7 +58,7 @@ apps:
       - opengl
       - gsettings
       - removable-media
-        
+
 layout:
   /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
     bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib
@@ -66,8 +66,6 @@ layout:
     bind: $SNAP/usr/local/share/locale
   /usr/local/share/tuxmath:
     bind: $SNAP/usr/local/share/tuxmath
-  /usr/local/share/tuxmath/images/menu:
-    bind: $SNAP/usr/local/share/tuxmath/images/status
   /usr/local/var/tuxmath:
     bind: $SNAP/usr/local/var/tuxmath
   /usr/local/etc/tuxmath:
@@ -76,7 +74,7 @@ layout:
     bind: $SNAP/usr/share/alsa
   /etc/fonts:
     bind: $SNAP/etc/fonts
-    
+
 parts:
   alsa-mixin:
     plugin: dump
@@ -129,3 +127,7 @@ parts:
       - libt4k-common0
       - libglu1-mesa
       - freeglut3
+    override-stage: |
+      cd $SNAPCRAFT_PART_INSTALL
+      cp usr/local/share/tuxmath/images/status/* usr/local/share/tuxmath/images/menu/
+      snapcraftctl stage
