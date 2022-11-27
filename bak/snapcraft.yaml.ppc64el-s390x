@@ -116,6 +116,8 @@ parts:
       - libsdl-mixer1.2-dev
       - librsvg2-dev
       - libt4k-common0-dev
+    configflags:
+      - --prefix=/usr/local
     stage-packages:
       - libcairo2
       - libsdl1.2debian
@@ -128,6 +130,7 @@ parts:
       - libpulse0
       - librsvg2-2
       - librsvg2-common
+      - libslang2
       - libt4k-common0
       - libglu1-mesa
       - freeglut3
