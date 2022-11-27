@@ -127,5 +127,6 @@ parts:
       - freeglut3
     override-stage: |
       cd $SNAPCRAFT_PART_INSTALL
+      mkdir -p ${SNAPCRAFT_PART_INSTALL}/usr/local/share/tuxmath/images/menu
       cp usr/local/share/tuxmath/images/status/* usr/local/share/tuxmath/images/menu/
       snapcraftctl stage
