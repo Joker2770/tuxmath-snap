@@ -89,7 +89,7 @@ parts:
     plugin: cmake
     source: "https://github.com/siddharthlatest/tuxmath.git"
     source-depth: 1
-    source-branch: debian
+    source-branch: master
     source-type: git
     build-packages:
       - gcc
