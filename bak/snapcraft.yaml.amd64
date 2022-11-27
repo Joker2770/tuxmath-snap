@@ -89,7 +89,6 @@ parts:
     plugin: autotools
     source: "https://github.com/tux4kids/tuxmath.git"
     source-depth: 1
-    source-branch: master
     source-commit: 4dbae9859702580ef4715094ed5efebc03beed9c
     source-type: git
     build-packages:
