@@ -97,8 +97,10 @@ parts:
   tux-math:
     after: [alsa-mixin]
     plugin: cmake
-    source: "https://github.com/Joker2770/tuxmath-snap/raw/main/tuxmath_w_fonts-2.0.1.tar.gz"
-    source-type: tar
+    source: "https://github.com/tux4kids/tuxmath.git"
+    source-depth: 1
+    source-branch: master
+    source-type: git
     build-packages:
       - gcc
       - g++
