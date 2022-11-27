@@ -106,6 +106,8 @@ parts:
       - libsdl-mixer1.2-dev
       - librsvg2-dev
       - libt4k-common0-dev
+    configflags:
+      - -DCMAKE_INSTALL_PREFIX=/usr/local
     stage-packages:
       - libcairo2
       - libsdl1.2debian
