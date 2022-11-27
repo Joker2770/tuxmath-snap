@@ -19,7 +19,7 @@ grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 base: core18
 architectures:
-  - build-on: arm64
+  - build-on: ppc64el
 
 plugs: # plugs for theming, font settings, cursor and to use gtk3 file chooser
   gtk-3-themes:
@@ -107,7 +107,7 @@ parts:
       - librsvg2-dev
       - libt4k-common0-dev
     configflags:
-      - --build=aarch64-unknown-linux-gnu
+      - --build=powerpc64le-unknown-linux-gnu
       - --prefix=/usr/local
     stage-packages:
       - libcairo2
