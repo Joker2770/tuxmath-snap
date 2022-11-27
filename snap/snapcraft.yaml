@@ -89,16 +89,15 @@ parts:
 
   tux-math:
     after: [alsa-mixin]
-    plugin: cmake
+    plugin: autotools
     source: "https://github.com/tux4kids/tuxmath.git"
     source-depth: 1
     source-branch: debian
     source-type: git
     build-packages:
       - gcc
-      - g++
       - build-essential
-      - cmake
+      - automake
       - make
       - libcairo2-dev
       - libsdl1.2-dev
