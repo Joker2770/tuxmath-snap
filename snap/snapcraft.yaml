@@ -118,6 +118,7 @@ parts:
       - build-essential
       - cmake
       - make
+      - libc6-dev
       - libcairo2-dev
       - libsdl1.2-dev
       - libsdl-gfx1.2-dev
@@ -131,7 +132,9 @@ parts:
     configflags:
       - -DCMAKE_INSTALL_PREFIX=/usr/local
       - -DCMAKE_C_FLAGS=-lm
+      - -DCMAKE_CXX_FLAGS=-lm
     stage-packages:
+      - libc6
       - libcairo2
       - libsdl1.2debian
       - libsdl-gfx1.2-5
