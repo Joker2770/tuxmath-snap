@@ -55,6 +55,72 @@ apps:
       - opengl
       - gsettings
       - removable-media
+      - network
+      - network-bind
+
+  tuxmathadmin:
+    command-chain: ["snap/command-chain/alsa-launch"]
+    command: usr/local/bin/tuxmathadmin
+    environment:
+      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio/
+    extensions: [gnome-3-28]
+    plugs:
+      - home
+      - audio-playback
+      - pulseaudio
+      - alsa
+      - desktop
+      - desktop-legacy
+      - wayland
+      - unity7
+      - x11
+      - opengl
+      - gsettings
+      - removable-media
+
+  tuxmathserver:
+    command-chain: ["snap/command-chain/alsa-launch"]
+    command: usr/local/bin/tuxmathserver
+    environment:
+      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio/
+    extensions: [gnome-3-28]
+    plugs:
+      - home
+      - audio-playback
+      - pulseaudio
+      - alsa
+      - desktop
+      - desktop-legacy
+      - wayland
+      - unity7
+      - x11
+      - opengl
+      - gsettings
+      - removable-media
+      - network
+      - network-bind
+
+  tuxmathtestclient:
+    command-chain: ["snap/command-chain/alsa-launch"]
+    command: usr/local/bin/tuxmathtestclient
+    environment:
+      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio/
+    extensions: [gnome-3-28]
+    plugs:
+      - home
+      - audio-playback
+      - pulseaudio
+      - alsa
+      - desktop
+      - desktop-legacy
+      - wayland
+      - unity7
+      - x11
+      - opengl
+      - gsettings
+      - removable-media
+      - network
+      - network-bind
 
 layout:
   /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
