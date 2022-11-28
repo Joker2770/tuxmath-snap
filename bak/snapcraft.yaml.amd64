@@ -111,7 +111,7 @@ parts:
     plugin: cmake
     source: "https://github.com/tux4kids/tuxmath.git"
     source-depth: 1
-    source-commit: 3e87f5425963a37f82f7a14373d51429d8d505e1
+    source-commit: f3a7b0243f88be6518b6ad6a0dbe5a42c5b71c4c
     source-type: git
     build-packages:
       - gcc
